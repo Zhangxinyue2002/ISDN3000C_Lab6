@@ -46,14 +46,8 @@ pip install -r requirements.txt
 
 ## 📁 Project Files
 
-### Basic Examples
-- **`blink.py`** - Simple LED blinking (Pin 31)
-- **`button_read.py`** - Read button state (Pin 13)
-- **`button_led.py`** - Button controls LED
-- **`clean.py`** - Manually clean GPIO pins
-
-### Exercises
 - **`exercise2_camera.py`** - Camera capture with Canny edge detection
+- **`clean.py`** - Manually clean GPIO pins if needed
 
 ## 🚀 Running the Scripts
 
@@ -63,26 +57,8 @@ cd ~/LAB06
 source lab06_venv/local/bin/activate
 ```
 
-### Run Basic Examples
+### Run Exercise 2: Camera Capture
 ```bash
-# Blink LED
-python3 lab06_venv/blink.py
-
-# Read button
-python3 lab06_venv/button_read.py
-
-# Button controls LED
-python3 lab06_venv/button_led.py
-
-# PWM LED fade
-python3 lab06_venv/led_fade.py
-```
-
-### Run Exercises
-```bash
-
-
-# Exercise 2: Camera Capture
 python3 exercise2_camera.py
 ```
 
@@ -91,11 +67,19 @@ python3 exercise2_camera.py
 python3 clean.py
 ```
 
-## 🎯 Exercises
+## 🎯 Exercise 2: Camera Capture with Edge Detection
 
+### Circuit Photos
 
-### Exercise 2: Camera Capture with Edge Detection
-**Features:**
+**Exercise 2 Setup - Overview:**
+
+![Circuit Setup 1](Picture1.jpg)
+
+**Exercise 2 Setup - Close-up:**
+
+![Circuit Setup 2](Picture2.jpg)
+
+### Features
 - Press button to capture image
 - Applies Canny edge detection
 - LED lights for 0.5s to confirm capture
@@ -146,3 +130,4 @@ python3 lab06_venv/clean.py
 - [RDK X-5 Official Documentation](https://developer.d-robotics.cc/rdk_doc/en/)
 - [RDK 40-Pin GPIO Guide](https://developer.d-robotics.cc/rdk_doc/en/Basic_Application/03_40pin_user_guide/40pin_define/)
 - [OpenCV Documentation](https://docs.opencv.org/)
+

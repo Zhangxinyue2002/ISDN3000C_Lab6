@@ -33,9 +33,6 @@ share/
 
 # Captured images
 captured_images/
-*.jpg
-*.png
-*.jpeg
 
 # OS
 .DS_Store
@@ -50,7 +47,20 @@ EXERCISE1_接线说明.md
 EXERCISE2_接线说明.md
 按钮问题修复说明.md
 
+# Exclude other Python files (only keep exercise2_camera.py and clean.py)
+blink.py
+button_read.py
+button_led.py
+led_fade.py
+led_fade_alt.py
+exercise1_pwm_button.py
 exercise1_pwm_button(not work).py
 cleanup_advanced.py
-led_fade_alt.py
+test_setup.py
+opencv.py
+pyvenv.cfg
+
+# Exclude other documentation files
+USAGE_GUIDE.md
+TROUBLESHOOTING.md
 
