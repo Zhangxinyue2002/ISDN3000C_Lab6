@@ -8,7 +8,6 @@ This repository contains Python scripts for controlling GPIO pins on the RDK X-5
 - [Project Files](#project-files)
 - [Running the Scripts](#running-the-scripts)
 - [Exercises](#exercises)
-- [Circuit Diagrams](#circuit-diagrams)
 
 ## 🔧 Hardware Setup
 
@@ -45,27 +44,15 @@ source lab06_venv/local/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. Configure PWM (for PWM exercises)
-```bash
-sudo srpi-config
-```
-Navigate to: `3 Interface Options` → `I3 Peripheral bus config`
-- Enable **PWM4** on Physical Pin 32
-- Enable **PWM0** on Physical Pin 33
-
-Reboot is required.
-
 ## 📁 Project Files
 
 ### Basic Examples
 - **`blink.py`** - Simple LED blinking (Pin 31)
 - **`button_read.py`** - Read button state (Pin 13)
 - **`button_led.py`** - Button controls LED
-- **`led_fade.py`** - PWM LED fading effect (Pin 32)
 - **`clean.py`** - Manually clean GPIO pins
 
 ### Exercises
-- **`exercise1_pwm_button.py`** - PWM brightness control with button
 - **`exercise2_camera.py`** - Camera capture with Canny edge detection
 
 ## 🚀 Running the Scripts
@@ -93,30 +80,19 @@ python3 lab06_venv/led_fade.py
 
 ### Run Exercises
 ```bash
-# Exercise 1: PWM Button Control
-python3 lab06_venv/exercise1_pwm_button.py
+
 
 # Exercise 2: Camera Capture
-python3 lab06_venv/exercise2_camera.py
+python3 exercise2_camera.py
 ```
 
 ### Clean GPIO (if ports are in use)
 ```bash
-python3 lab06_venv/clean.py
+python3 clean.py
 ```
 
 ## 🎯 Exercises
 
-### Exercise 1: PWM Button Control
-**Features:**
-- **Short press:** Cycles through brightness levels (Off → 25% → 50% → 75% → 100% → Off)
-- **Long press (2s):** Switches to blinking mode
-- LED connected to **Pin 32** (PWM-enabled)
-- Button connected to **Pin 13**
-
-**Wiring:**
-- LED: Pin 32 → Resistor → LED Anode → LED Cathode → GND
-- Button: 3.3V → Button → Pin 13
 
 ### Exercise 2: Camera Capture with Edge Detection
 **Features:**
@@ -134,30 +110,6 @@ python3 lab06_venv/clean.py
 - Images saved in `captured_images/` directory
 - Filenames include timestamp for uniqueness
 
-## 📸 Circuit Diagrams
-
-### Circuit Photos
-<!-- Add your circuit photos here -->
-
-**Example 1: Basic LED Blink**
-![Blink Circuit](./media/blink.png)
-
-**Example 2: Button Input**
-![Button Circuit](./media/button.png)
-
-**Example 3: Combined Circuit**
-![Combined Circuit](./media/combine.png)
-
-### Pin Reference
-
-| Physical Pin | Function | Usage |
-|--------------|----------|-------|
-| Pin 1 | 3.3V Power | Button power |
-| Pin 6 | Ground | LED ground |
-| Pin 13 | GPIO | Button input |
-| Pin 31 | GPIO | LED output |
-| Pin 32 | PWM4 | PWM LED control |
-| Pin 33 | PWM0 | Alternative PWM |
 
 ## 🔍 Pin Numbering
 
@@ -194,18 +146,3 @@ python3 lab06_venv/clean.py
 - [RDK X-5 Official Documentation](https://developer.d-robotics.cc/rdk_doc/en/)
 - [RDK 40-Pin GPIO Guide](https://developer.d-robotics.cc/rdk_doc/en/Basic_Application/03_40pin_user_guide/40pin_define/)
 - [OpenCV Documentation](https://docs.opencv.org/)
-
-## 👥 Team Members
-<!-- Add your team member names here -->
-- Member 1: [Name]
-- Member 2: [Name]
-- Member 3: [Name]
-
-## 📝 License
-This project is for educational purposes as part of ISDN3000C.
-
----
-
-**Course:** ISDN3000C  
-**Lab:** Lab 06 - GPIO Programming  
-**Date:** October 2025
