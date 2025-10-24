@@ -1,0 +1,9 @@
+# GPIO Library (pre-installed on RDK X-5)
+# Hobot.GPIO (system package, installed via --system-site-packages)
+
+# Computer Vision
+opencv-python>=4.5.0
+numpy>=1.19.0
+
+# Note: Install these in your virtual environment with:
+# pip install -r requirements.txt

@@ -1,0 +1,144 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                  LAB06 - QUICK REFERENCE CARD                            ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+📁 PROJECT FILES
+├── README.md                      ⭐ Main documentation
+├── USAGE_GUIDE.md                 ⭐ Detailed usage instructions
+├── requirements.txt               ⭐ Dependencies (opencv, numpy)
+├── .gitignore                     ⭐ Git configuration
+└── lab06_venv/
+    ├── exercise1_pwm_button.py    ⭐ Exercise 1 (PWM control)
+    ├── exercise2_camera.py        ⭐ Exercise 2 (Camera + edges)
+    ├── test_setup.py              ⭐ Test environment setup
+    ├── blink.py                   Basic: LED blink
+    ├── button_read.py             Basic: Button read
+    ├── button_led.py              Basic: Button + LED
+    ├── led_fade.py                Basic: PWM fade
+    └── clean.py                   Utility: GPIO cleanup
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎯 EXERCISE 1: PWM Button Control
+   File: exercise1_pwm_button.py
+   
+   Hardware:
+   • LED → Pin 32 (PWM) + 220Ω resistor → GND
+   • Button: 3.3V → Button → Pin 13
+   
+   Features:
+   • Short press: Cycle brightness (0%→25%→50%→75%→100%)
+   • Long press (2s): Toggle blinking mode
+   
+   Run: python3 lab06_venv/exercise1_pwm_button.py
+
+───────────────────────────────────────────────────────────────────────────
+
+🎯 EXERCISE 2: Camera + Edge Detection
+   File: exercise2_camera.py
+   
+   Hardware:
+   • LED → Pin 31 + 220Ω resistor → GND
+   • Button: 3.3V → Button → Pin 13
+   • USB Camera
+   
+   Features:
+   • Press button to capture image
+   • Applies Canny edge detection
+   • LED confirms capture (0.5s)
+   • Saves to captured_images/ directory
+   
+   Run: python3 lab06_venv/exercise2_camera.py
+
+═══════════════════════════════════════════════════════════════════════════
+
+🔌 PIN REFERENCE (BOARD Numbering)
+
+   Pin  │ Function    │ Usage
+   ─────┼─────────────┼───────────────────────────
+   1    │ 3.3V        │ Button power (NEVER use 5V!)
+   6    │ Ground      │ LED ground
+   13   │ GPIO27      │ Button input (all exercises)
+   31   │ GPIO6       │ LED output (Exercise 2, basics)
+   32   │ PWM4        │ PWM LED (Exercise 1) *needs config
+   33   │ PWM0        │ Alternative PWM *needs config
+
+═══════════════════════════════════════════════════════════════════════════
+
+⚡ QUICK START
+
+1. Activate Environment:
+   cd ~/LAB06
+   source lab06_venv/local/bin/activate
+
+2. Install Dependencies:
+   pip install -r requirements.txt
+
+3. Test Setup:
+   python3 lab06_venv/test_setup.py
+
+4. Configure PWM (for Exercise 1):
+   sudo srpi-config
+   → 3 Interface Options → I3 Peripheral bus config
+   → Enable PWM4 on Pin 32
+   → Reboot if needed
+
+5. Run Exercises:
+   python3 lab06_venv/exercise1_pwm_button.py
+   python3 lab06_venv/exercise2_camera.py
+
+═══════════════════════════════════════════════════════════════════════════
+
+🔧 TROUBLESHOOTING
+
+Problem: "Channel already in use"
+Fix: python3 lab06_venv/clean.py
+
+Problem: PWM not working
+Fix: Run sudo srpi-config, enable PWM, reboot
+
+Problem: Camera won't open
+Fix: Check USB, try different index (0 or 1), check permissions
+
+Problem: Import errors
+Fix: source lab06_venv/local/bin/activate
+     pip install -r requirements.txt
+
+═══════════════════════════════════════════════════════════════════════════
+
+📤 SUBMISSION CHECKLIST
+
+□ All scripts tested and working
+□ Circuit photos in media/ directory
+□ Team names added to README.md
+□ Repository is public: ISDN3000C_Lab06
+□ Push to GitHub
+□ Submit link to Canvas
+
+Git Commands:
+   git init
+   git add .
+   git commit -m "Lab06 GPIO exercises complete"
+   git branch -M main
+   git remote add origin https://github.com/USERNAME/ISDN3000C_Lab06.git
+   git push -u origin main
+
+═══════════════════════════════════════════════════════════════════════════
+
+⚠️ SAFETY REMINDERS
+
+✓ RDK X-5 uses 3.3V (NOT 5V!)
+✓ Always use 220Ω resistor with LED
+✓ Discharge static before handling
+✓ Double-check wiring before running code
+✓ Press Ctrl+C to exit any script
+
+═══════════════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION
+
+Full details: README.md
+Usage guide: USAGE_GUIDE.md
+This card: QUICK_REFERENCE.txt
+
+═══════════════════════════════════════════════════════════════════════════

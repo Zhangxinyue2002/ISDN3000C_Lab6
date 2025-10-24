@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+lab06_venv/
+myenv/
+venv/
+env/
+ENV/
+*.cfg
+pyvenv.cfg
+bin/
+lib/
+lib64/
+local/
+include/
+share/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Captured images
+captured_images/
+*.jpg
+*.png
+*.jpeg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Wiring instruction documents (接线说明)
+*接线说明.md
+EXERCISE1_接线说明.md
+EXERCISE2_接线说明.md
+按钮问题修复说明.md
+
+exercise1_pwm_button(not work).py
+cleanup_advanced.py
+led_fade_alt.py
+
